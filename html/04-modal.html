@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./modal.css">
+    <title>Modal page</title>
+</head>
+<body>
+    <header class="page-header">
+		<a href="./index.html">Go back to the main page.</a>
+	</header>
+    <p>
+    	Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     	Cumque aut aliquam unde!
+      	Ut earum at ipsum voluptatibus ipsam optio?
+      	Quisquam, beatae dolorem aspernatur labore fugiat eos atque quidem, iste quod est accusantium tenetur cumque sunt fuga amet tempora.
+      	Accusantium incidunt harum nostrum ipsam? Neque non architecto quidem error vero animi quas laborum eveniet corrupti officiis dicta obcaecati fuga adipisci excepturi, distinctio vitae iure atque eos qui nam eius maiores tempore expedita?
+      	Perferendis enim iusto qui impedit maxime quasi, distinctio expedita unde a.
+      	Fuga fugiat quasi consectetur voluptatum numquam, nobis accusamus commodi voluptas, dolore odit totam porro praesentium perferendis qui eveniet.
+	</p>
+	<button data-open-modal type="button">Show Modal</button>
+	<p>
+  		Lorem ipsum dolor sit amet consectetur adipisicing elit.
+   		Cumque aut aliquam unde!
+    	Ut earum at ipsum voluptatibus ipsam optio?
+		Quisquam, beatae dolorem aspernatur labore fugiat eos atque quidem, iste quod est accusantium tenetur cumque sunt fuga amet tempora.
+		Accusantium incidunt harum nostrum ipsam?
+		Neque non architecto quidem error vero animi quas laborum eveniet corrupti officiis dicta obcaecati fuga adipisci excepturi, distinctio vitae iure atque eos qui nam eius maiores tempore expedita?
+		Perferendis enim iusto qui impedit maxime quasi, distinctio expedita unde a. Fuga fugiat quasi consectetur voluptatum numquam, nobis accusamus commodi voluptas, dolore odit totam porro praesentium perferendis qui eveniet.
+	</p>
+	<div data-backdrop is-hidden class="backdrop">
+    	<div class="modal">
+        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel debitis at nisi explicabo tempora eligendi, aliquid eveniet nemo numquam nihil.</p>
+    		<button data-close-modal type="button">Shut Modal</button>
+    	</div>
+	</div>
+</body>
+<script>
+const refs = {
+    openModalBtn: document.querySelector("[data-open-modal]"),
+    closeModalBtn: document.querySelector("[data-close-modal]"),
+    backdrop: document.querySelector("[data-backdrop]"),
+};
+
+refs.openModalBtn.addEventListener("click", toggleModal);
+refs.closeModalBtn.addEventListener("click", toggleModal);
+
+refs.backdrop.addEventListener("click", logBackdropClick);
+
+function toggleModal() {
+    refs.backdrop.classList.toggle("is-hidden");
+}
+
+function logBackdropClick() {
+    console.log("This was a click");
+}
+</script>
+</html>
